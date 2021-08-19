@@ -1,0 +1,1 @@
+export const CHANGE_ATTRIBUTE = 'CHANGE_ATTRIBUTE';
