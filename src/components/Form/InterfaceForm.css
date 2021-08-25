@@ -34,7 +34,7 @@
     padding: 6px 8px 2px;
 }
 
-.interface-button-add-ui {
+.interface-button-container {
     margin-top: 8px;
     display: flex;
     align-items: center;

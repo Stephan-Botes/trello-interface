@@ -1,4 +1,14 @@
-import {REQUEST_BOARDS_PENDING, REQUEST_BOARDS_SUCCESS, REQUEST_BOARDS_FAILED, ADD_BOARD_TITLE_PENDING, EDIT_BOARD_TITLE} from '../constants';
+import {
+    REQUEST_BOARDS_PENDING,
+    REQUEST_BOARDS_SUCCESS,
+    REQUEST_BOARDS_FAILED,
+    ADD_BOARD_SUCCESS,
+    ADD_BOARD_FAILED,
+    DELETE_BOARD_SUCCESS,
+    DELETE_BOARD_FAILED,
+    EDIT_BOARD_SUCCESS,
+    EDIT_BOARD_FAILED
+} from '../constants';
 
 const initialState = {
     isPending: false,
@@ -15,16 +25,30 @@ export const boardReducer = (state = initialState, action = {}) => {
         case REQUEST_BOARDS_FAILED:
             return Object.assign({}, state, {error: action.payload, isPending: false});
 
-        case ADD_BOARD_TITLE_PENDING: {
-            return state;
-        }
+        case ADD_BOARD_SUCCESS:
+            return Object.assign({}, state, {boards: [...state.boards, action.payload]});
+        case ADD_BOARD_FAILED:
+        case DELETE_BOARD_FAILED:
+        case EDIT_BOARD_FAILED:
+            return Object.assign({}, state, {error: action.payload});
 
-        case EDIT_BOARD_TITLE: {
-            // const { listID, newTitle } = action.payload;
-            // const list = state[listID];
-            // list.title = newTitle;
-            // return { ...state, [listID]: list };
+        case DELETE_BOARD_SUCCESS:
+            return Object.assign({}, state, {boards: [...state.boards.filter((board) => board.id !== action.payload)]});
 
+        case EDIT_BOARD_SUCCESS: {
+            let newBoard = state.boards.find(board => {
+                return board.id === action.payload.id;
+            });
+            newBoard.name = action.payload.newName;
+            // const newBoardIndex = state.boards.indexOf(newBoard);
+            // let newState = state.boards;
+            // newState.splice(newBoardIndex, 1);
+            // newState[newBoardIndex] = newBoard;
+            // console.log(newState)
+            // console.log(state.boards);
+            // return Object.assign({}, state, {boards: newState});
+
+            return Object.assign({}, state, {boards: [...state.boards.filter((board) => board.id !== action.payload.id), newBoard]});
         }
 
         default:
