@@ -1,7 +1,11 @@
-import {combineReducers, createStore} from 'redux';
-import {changeAttribute} from '../reducers/example-reducer';
+import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {listReducer} from '../reducers/listReducer';
+import {boardReducer} from '../reducers/boardReducer';
+import thunkMiddleware from 'redux-thunk';
+import {createLogger} from 'redux-logger';
 
-const rootReducer = combineReducers({changeAttribute});
-const store = createStore(rootReducer);
+const logger = createLogger();
+const rootReducer = combineReducers({listReducer, boardReducer});
+const store = createStore(rootReducer, (applyMiddleware(thunkMiddleware)));
 
 export default store;

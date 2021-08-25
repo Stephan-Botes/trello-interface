@@ -1,33 +1,17 @@
-import {useEffect} from 'react';
-import logo from '../logo.svg';
-import './App.css';
-import Header from './Header/Header';
-import {setAttribute} from '../actions/example-action';
-import {connect} from 'react-redux';
+import React from 'react';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import InterfaceHome from './Home/InterfaceHome';
+import InterfaceBoard from './Board/InterfaceBoard';
 
-
-const mapStateToProps = (state) => {
-    return {
-        attribute: state.attribute
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onAttributeChange: (event) => dispatch(setAttribute(event.target.value))
-    }
-}
-
-function App() {
-    useEffect(() => {
-        // console.log(store.getState);
-    });
-
+const App = () => {
     return (
-        <div className="App">
-            <Header/>
-        </div>
+        <Router>
+            <div>
+                <Route path="/" exact component={InterfaceHome} />
+                <Route path="/:boardID" component={InterfaceBoard} />
+            </div>
+        </Router>
     );
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
