@@ -1,0 +1,52 @@
+.thumbnail-container {
+    height: 280px;
+    width: 280px;
+    background: #ebecf0;
+    padding: 10px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px grey;
+    position: relative;
+}
+
+.thumbnail-button-container {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.thumbnail-title {
+    text-align: center;
+    color: #37383b;
+    text-decoration: none;
+}
+
+.edit-board-button {
+    color: black;
+    cursor: pointer;
+    right: 5px;
+    bottom: 5px;
+    opacity: 0.4;
+}
+
+.delete-board-button {
+    color: black;
+    cursor: pointer;
+    right: 5px;
+    bottom: 5px;
+    opacity: 0.4;
+}
+
+.edit-board-button:hover {
+    opacity: 1;
+}
+
+.delete-board-button:hover {
+     opacity: 1;
+ }

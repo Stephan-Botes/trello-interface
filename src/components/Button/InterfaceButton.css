@@ -1,0 +1,41 @@
+.list-button {
+    color: white;
+    background: rgba(0,0,0,0.1);
+    opacity: 1;
+}
+
+.card-button {
+    color: inherit;
+    background: inherit;
+    opacity: 0.5;
+}
+
+.interface-add-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    height: 36px;
+    width: 272px;
+    padding-left: 10px;
+}
+
+.interface-text-field {
+    resize: none;
+    width: 100%;
+    outline: none;
+    overflow: hidden;
+    border: none;
+}
+
+.text-area-container {
+    /*overflow: hidden;*/
+    min-height: 85px;
+    padding: 6px 8px 2px;
+}
+
+.interface-button {
+    color: white;
+    background: #5aac44;
+}
+

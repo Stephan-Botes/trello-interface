@@ -1,0 +1,40 @@
+.card-container {
+    margin: 0 0 8px 0;
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.edit-button {
+    display: none !important;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    opacity: 0.5;
+}
+
+.edit-button:hover {
+    opacity: 0.8;
+}
+
+.delete-button {
+    display: none !important;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    opacity: 0.5;
+}
+
+.delete-button {
+    opacity: 0.8;
+}
+
+.card-container:hover .edit-button {
+    display: block !important;
+    cursor: pointer;
+}
+
+.card-container:hover .delete-button {
+    display: block !important;
+    cursor: pointer;
+}

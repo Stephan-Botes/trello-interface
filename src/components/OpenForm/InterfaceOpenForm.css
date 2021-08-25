@@ -1,0 +1,23 @@
+.open-form-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 3px;
+    height: 36px;
+    margin-left: 8px;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.list-button {
+    color: white;
+    background-color: rgba(0,0,0,.15);
+    opacity: 1;
+}
+
+.card-button {
+    color: inherit;
+    background-color: inherit;
+    opacity: 0.5;
+}
