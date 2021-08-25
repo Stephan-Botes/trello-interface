@@ -1,12 +1,13 @@
 import './InterfaceHome.css';
 import {connect} from 'react-redux';
-import React, {useEffect} from 'react';
-import {requestBoardsAction} from '../../actions/boardActions';
+import React, {useEffect, useState} from 'react';
+import {addBoardTitleAction, requestBoardsAction} from '../../actions/boardActions';
 import InterfaceCard from '../Card/InterfaceCard';
 import {Link} from 'react-router-dom';
 import Thumbnail from "../Thumbnail/Thumbnail";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
+import {Button} from "@material-ui/core";
 
 const mapStateToProps = (state) => {
     return {
@@ -18,14 +19,27 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onRequestBoards: () => dispatch(requestBoardsAction())
+        onRequestBoards: () => dispatch(requestBoardsAction()),
+        onAddBoard: (boardName) => dispatch(addBoardTitleAction(boardName))
     }
 }
 
 const InterfaceHome = (props) => {
+    const [boardName, setBoardName] = useState('');
+
     useEffect(() => {
         props.onRequestBoards();
     }, [])
+
+    const handleChange = (event) => {
+        setBoardName(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        props.onAddBoard(boardName);
+    }
+
 
     const {isPending, boards} = props;
 
@@ -47,18 +61,18 @@ const InterfaceHome = (props) => {
 
     const renderCreateBoard = () => {
         return (
-            // <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
-            //     <CreateTitle>Create a new Board</CreateTitle>
-            //     <CreateInput
-            //         onChange={handleChange}
-            //         value={newBoardTitle}
-            //         placeholder="Your boards title..."
-            //         type="text"
-            //     />
-            // </form>
-            <p>Create new board here</p>
+            <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+                <h3>Create a new Board</h3>
+                <input
+                    onChange={handleChange}
+                    value={boardName}
+                    placeholder="Your boards title..."
+                    type="text"
+                />
+                <Button type='submit'>Submit</Button>
+            </form>
         );
-    };
+    }
 
     return (
         <>

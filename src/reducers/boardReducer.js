@@ -1,4 +1,4 @@
-import {REQUEST_BOARDS_PENDING, REQUEST_BOARDS_SUCCESS, REQUEST_BOARDS_FAILED, EDIT_BOARD_TITLE} from '../constants';
+import {REQUEST_BOARDS_PENDING, REQUEST_BOARDS_SUCCESS, REQUEST_BOARDS_FAILED, ADD_BOARD_TITLE_PENDING, EDIT_BOARD_TITLE} from '../constants';
 
 const initialState = {
     isPending: false,
@@ -14,6 +14,10 @@ export const boardReducer = (state = initialState, action = {}) => {
             return Object.assign({}, state, {boards: action.payload, isPending: false});
         case REQUEST_BOARDS_FAILED:
             return Object.assign({}, state, {error: action.payload, isPending: false});
+
+        case ADD_BOARD_TITLE_PENDING: {
+            return state;
+        }
 
         case EDIT_BOARD_TITLE: {
             // const { listID, newTitle } = action.payload;
