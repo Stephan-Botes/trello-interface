@@ -3,7 +3,8 @@ import './InterfaceList.css';
 import InterfaceCard from '../Card/InterfaceCard';
 import InterfaceButton from '../Button/InterfaceButton';
 import {Draggable, Droppable} from 'react-beautiful-dnd';
-import CreateButton from "../CreateSlot/CreateSlot";
+import CreateSlot from "../CreateSlot/CreateSlot";
+import {Create} from "@material-ui/icons";
 
 const InterfaceList = ({listId, index, title, cards}) => {
     return (
@@ -22,7 +23,7 @@ const InterfaceList = ({listId, index, title, cards}) => {
                                     <InterfaceCard key={card.id} id={card.id} index={index} text={card.text}/>
                                 ))}
                                 {provided.placeholder}
-                                <CreateButton listId={listId}/>
+                                <CreateSlot listId={listId}/>
                             </div>
                         )}
                     </Droppable>
