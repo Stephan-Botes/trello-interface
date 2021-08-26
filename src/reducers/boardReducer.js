@@ -7,15 +7,19 @@ import {
     DELETE_BOARD_SUCCESS,
     DELETE_BOARD_FAILED,
     EDIT_BOARD_SUCCESS,
-    EDIT_BOARD_FAILED
+    EDIT_BOARD_FAILED,
+    SET_ACTIVE_BOARD
 } from '../constants';
 
 const initialState = {
     isPending: false,
     boards: [],
-    error: ''
+    error: '',
+    activeBoardID: '',
+    activeBoardName: ''
 }
 
+// Redux reducer - Handles all board related actions and updates the store state according to their types
 export const boardReducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case REQUEST_BOARDS_PENDING:
@@ -48,8 +52,13 @@ export const boardReducer = (state = initialState, action = {}) => {
             // console.log(state.boards);
             // return Object.assign({}, state, {boards: newState});
 
-            return Object.assign({}, state, {boards: [...state.boards.filter((board) => board.id !== action.payload.id), newBoard]});
+            return Object.assign({}, state, {
+                boards: [...state.boards.filter((board) => board.id !== action.payload.id), newBoard]
+            });
         }
+
+        case SET_ACTIVE_BOARD:
+            return Object.assign({}, state, {activeBoardID: action.payload.activeBoardID});
 
         default:
             return state;

@@ -10,42 +10,62 @@ import {
     DELETE_BOARD_FAILED,
     EDIT_BOARD_PENDING,
     EDIT_BOARD_SUCCESS,
-    EDIT_BOARD_FAILED
+    EDIT_BOARD_FAILED,
+    SET_ACTIVE_BOARD
 } from '../constants';
 
-export const requestBoardsAction = () => (dispatch) => {
+// Redux action - Fetches all boards from user account
+export const requestBoardsAction = () => async (dispatch) => {
     dispatch({type: REQUEST_BOARDS_PENDING, payload: 'loading'});
-    fetch(`https://api.trello.com/1/members/stephanbotes1/boards?key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`)
-        .then(response => response.json())
-        .then(data => dispatch({type: REQUEST_BOARDS_SUCCESS, payload: data}))
-        .catch(error => dispatch({type: REQUEST_BOARDS_FAILED, payload: error}))
+    try {
+        const boards = await fetch(`https://api.trello.com/1/members/stephanbotes1/boards?key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`)
+            .then(response => response.json())
+        dispatch({type: REQUEST_BOARDS_SUCCESS, payload: boards});
+    } catch (error) {
+        dispatch({type: REQUEST_BOARDS_FAILED, payload: error});
+    }
 }
 
-export const addBoardAction = (newName) => (dispatch) => {
+// Redux action - Adds a board to the user account
+export const addBoardAction = (newName) => async (dispatch) => {
     dispatch({type: ADD_BOARD_PENDING, payload: 'adding'});
-    fetch(`https://api.trello.com/1/boards/?name=${newName}&key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
-        method: 'POST'
-    })
-        .then(response => response.json())
-        .then(data => dispatch({type: ADD_BOARD_SUCCESS, payload: data}))
-        .catch(error => dispatch({type: ADD_BOARD_FAILED, payload: error}));
+    try {
+        const newBoard = await fetch(`https://api.trello.com/1/boards/?name=${newName}&key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
+            method: 'POST'
+        })
+            .then(response => response.json())
+        dispatch({type: ADD_BOARD_SUCCESS, payload: newBoard});
+    } catch (error) {
+        dispatch({type: ADD_BOARD_FAILED, payload: error});
+    }
 }
 
-export const deleteBoardAction = (boardID) => (dispatch) => {
-        dispatch({type: DELETE_BOARD_PENDING, payload: 'deleting'});
-        fetch(`https://api.trello.com/1/boards/${boardID}?key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
+// Redux action - Deletes a board from user account
+export const deleteBoardAction = (boardID) => async (dispatch) => {
+    dispatch({type: DELETE_BOARD_PENDING, payload: 'deleting'});
+    try {
+        await fetch(`https://api.trello.com/1/boards/${boardID}?key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
             method: 'DELETE'
         })
-            .then(data => dispatch({type: DELETE_BOARD_SUCCESS, payload: boardID}))
-            .catch(error => dispatch({type: DELETE_BOARD_FAILED, payload: error}));
+        dispatch({type: DELETE_BOARD_SUCCESS, payload: boardID});
+    } catch (error) {
+        dispatch({type: DELETE_BOARD_FAILED, payload: error});
     }
-
-export const editBoardAction = (boardID, newName) => (dispatch) => {
-    dispatch({type: EDIT_BOARD_PENDING, payload: 'editing'});
-    fetch(`https://api.trello.com/1/boards/${boardID}?name=${newName}&key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
-        method: 'PUT'
-    })
-        .then(data => dispatch({type: EDIT_BOARD_SUCCESS, payload: {id: boardID, newName: newName}}))
-        .catch(error => dispatch({type: EDIT_BOARD_FAILED, payload: error}));
 }
+
+// Redux action - Edits a board name on user account
+export const editBoardAction = (boardID, newName) => async (dispatch) => {
+    dispatch({type: EDIT_BOARD_PENDING, payload: 'editing'});
+    try {
+        await fetch(`https://api.trello.com/1/boards/${boardID}?name=${newName}&key=${process.env.REACT_APP_TRELLO_API_KEY}&token=${process.env.REACT_APP_AUTHENTICATION_TOKEN}`, {
+            method: 'PUT'
+        })
+        dispatch({type: EDIT_BOARD_SUCCESS, payload: {id: boardID, newName: newName}});
+    } catch (error) {
+        dispatch({type: EDIT_BOARD_FAILED, payload: error});
+    }
+}
+
+// Redux action - Sets active board ID when clicking a specific board
+export const setActiveBoardAction = (boardID) => ({type: SET_ACTIVE_BOARD, payload: boardID});
 

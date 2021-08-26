@@ -1,8 +1,14 @@
+h3 {
+   color: #f5fcff;
+}
+
 .home-container {
+    background-image: linear-gradient(to right bottom, #7ad7f0, #87dbf1, #93def2, #9ee2f4, #a9e5f5, #b4e8f7, #beebf8, #c8eefa, #d4f1fc, #dff5fd, #eaf8fe, #f5fcff);
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
+    height: 100vh;
 }
 
 .board-thumbnails-container {
@@ -13,4 +19,19 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.create-board-form {
+    textAlign: center;
+}
+
+.create-board-submit-button {
+    background-image: linear-gradient(to right bottom, #7a9edc, #688dca, #567db8) !important;
+    color: #f5fcff !important;
+    margin-left: 5px !important;
+}
+
+.loading-icon {
+    height: 50%;
+    margin-top: 20vh;
 }
