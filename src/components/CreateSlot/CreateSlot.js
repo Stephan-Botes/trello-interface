@@ -1,6 +1,6 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import InterfaceButton from '../Button/InterfaceButton';
-import {connect} from "react-redux";
+import {connect} from 'react-redux';
 import {addList} from '../../actions/listActions';
 import {addCard} from '../../actions/cardActions';
 import InterfaceForm from '../Form/InterfaceForm';
@@ -46,12 +46,12 @@ const CreateSlot = (props) => {
             closeForm={closeForm}
         >
             <InterfaceButton onClick={list ? handleAddList : handleAddCard}>
-                {list ? "Add List" : "Add Card"}
+                {list ? 'Add List' : 'Add Card'}
             </InterfaceButton>
         </InterfaceForm>
     ) : (
         <InterfaceFormButton list={list} onClick={openForm}>
-            {list ? "Add another list" : "Add another card"}
+            {list ? 'Add another list' : 'Add another card'}
         </InterfaceFormButton>
     );
 }

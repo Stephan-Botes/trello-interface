@@ -1,7 +1,7 @@
 .thumbnail-container {
-    height: 280px;
-    width: 280px;
-    background: #ebecf0;
+    height: 200px;
+    width: 200px;
+    background-image: linear-gradient(to right bottom, #7a9edc, #688dca, #567db8, #446da6, #315d95);
     padding: 10px;
     margin: 8px;
     display: flex;
@@ -12,6 +12,12 @@
     border-radius: 3px;
     box-shadow: 0 2px 4px grey;
     position: relative;
+    transition: all 1s ease-in-out;
+}
+
+.thumbnail-container:hover {
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
 }
 
 .thumbnail-button-container {
@@ -23,7 +29,7 @@
 
 .thumbnail-title {
     text-align: center;
-    color: #37383b;
+    color: #f5fcff;
     text-decoration: none;
 }
 
@@ -48,13 +54,13 @@
 }
 
 .delete-board-button:hover {
-     opacity: 1;
- }
+    opacity: 1;
+}
 
 .board-edit-input {
+    color: #f5fcff !important;
     width: 100%;
     border: none;
-    outline-color: blue;
     border-radius: 3px;
     margin-bottom: 3px;
     padding: 5px;
@@ -65,5 +71,23 @@
     display: flex;
     align-items: center;
     margin-left: 8px;
-    /*width: 100%;*/
+    width: 100%;
+}
+
+.edit-board-submit-button {
+    background-image: linear-gradient(to right bottom, #7ad7f0, #87dbf1, #93def2, #9ee2f4, #a9e5f5, #b4e8f7, #beebf8, #c8eefa, #d4f1fc, #dff5fd, #eaf8fe, #f5fcff);
+    color: rgba(0,0,0,0.4) !important;
+    margin-left: 5px !important;
+}
+
+.edit-board-submit-button:hover {
+    color: rgba(0,0,0,1) !important;
+}
+
+.edit-board-close-button {
+    color: rgba(0,0,0,0.4) !important;
+}
+
+.edit-board-close-button:hover {
+    color: rgba(0,0,0,1) !important;
 }

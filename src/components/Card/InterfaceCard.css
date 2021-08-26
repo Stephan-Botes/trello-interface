@@ -5,7 +5,7 @@
     word-wrap: break-word;
 }
 
-.edit-button {
+.card-edit-button {
     display: none !important;
     position: absolute;
     right: 5px;
@@ -13,11 +13,11 @@
     opacity: 0.5;
 }
 
-.edit-button:hover {
+.card-edit-button:hover {
     opacity: 0.8;
 }
 
-.delete-button {
+.card-delete-button {
     display: none !important;
     position: absolute;
     right: 5px;
@@ -25,16 +25,16 @@
     opacity: 0.5;
 }
 
-.delete-button {
+.card-delete-button:hover {
     opacity: 0.8;
 }
 
-.card-container:hover .edit-button {
+.card-container:hover .card-edit-button {
     display: block !important;
     cursor: pointer;
 }
 
-.card-container:hover .delete-button {
+.card-container:hover .card-delete-button {
     display: block !important;
     cursor: pointer;
 }

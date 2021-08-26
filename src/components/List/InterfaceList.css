@@ -1,8 +1,59 @@
+h4 {
+    margin: 0.5rem;
+}
+
 .container {
-    background-color: lightblue;
+    background-image: linear-gradient(to right bottom, #7ad7f0, #87dbf1, #93def2, #9ee2f4, #a9e5f5, #b4e8f7, #beebf8, #c8eefa, #d4f1fc, #dff5fd, #eaf8fe, #f5fcff);
     border-radius: 3px;
     width: 20vw;
     padding: 6px;
     margin: 6px;
     height: 100%;
+}
+
+.list-container {
+    margin: 0 0 8px 0;
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.list-edit-button {
+    display: none !important;
+    position: relative;
+    right: 5px;
+    top: 5px;
+    opacity: 0.5;
+}
+
+.list-edit-button:hover {
+    opacity: 0.8;
+}
+
+.list-delete-button {
+    display: none !important;
+    position: relative;
+    right: 5px;
+    top: 5px;
+    opacity: 0.5;
+}
+
+.list-delete-button:hover {
+    opacity: 0.8;
+}
+
+.list-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list-header:hover .list-edit-button {
+    display: block !important;
+    cursor: pointer;
+}
+
+.list-header:hover .list-delete-button {
+    display: block !important;
+    cursor: pointer;
 }

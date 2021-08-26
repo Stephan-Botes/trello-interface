@@ -6,6 +6,7 @@ import {createLogger} from 'redux-logger';
 
 const logger = createLogger();
 const rootReducer = combineReducers({listReducer, boardReducer});
-const store = createStore(rootReducer, (applyMiddleware(thunkMiddleware)));
+const store = createStore(rootReducer, (applyMiddleware(thunkMiddleware, logger)));
+// const store = createStore(rootReducer, (applyMiddleware(thunkMiddleware)));
 
 export default store;

@@ -3,10 +3,8 @@ import './Thumbnail.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import {connect} from 'react-redux';
-import {editBoardAction} from "../../actions/boardActions";
-import Card from "@material-ui/core/Card";
-import {Button, TextareaAutosize} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import {Button, TextField} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Thumbnail = (props) => {
     const {id, title, deleteBoard, editBoard} = props;
@@ -45,9 +43,9 @@ const Thumbnail = (props) => {
     const renderEditInput = () => {
         return (
             <form onSubmit={handleFinishEditing}>
-                <input
+                <TextField
                     className={'board-edit-input'}
-                    type="text"
+                    type='text'
                     value={boardTitle}
                     onChange={handleChange}
                     autoFocus
@@ -55,8 +53,9 @@ const Thumbnail = (props) => {
                     onBlur={handleFinishEditing}
                 />
                 <div className={'interface-button-container'}>
-                    <Button type='submit'>Edit</Button>
-                    <CloseIcon onMouseDown={closeForm}/>
+                    {/*<Button type='submit'>Edit</Button>*/}
+                    <Button variant='contained' className={'edit-board-submit-button'} type='submit'>Submit</Button>
+                    <CloseIcon className={'edit-board-close-button'} onMouseDown={closeForm}/>
                 </div>
             </form>
         );
@@ -65,7 +64,9 @@ const Thumbnail = (props) => {
     const renderBoard = () => {
         return (
             <>
-                <h4 className={'thumbnail-title'}>{title}</h4>
+                <h4 className={'thumbnail-title'}>
+                    {title.length < 70 ? title : `${title.substr(0,70)}...`}
+                </h4>
                 <div className={'thumbnail-button-container'}>
                     <EditIcon className={'edit-board-button'} onClick={onEditBoard}/>
                     <DeleteIcon className={'delete-board-button'} onClick={onDeleteBoard}/>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Card, CardActions, CardContent, Typography} from '@material-ui/core';
+import {Card, CardContent, Typography} from '@material-ui/core';
 import './InterfaceCard.css';
 import {Draggable} from 'react-beautiful-dnd';
 import InterfaceButton from '../Button/InterfaceButton';
@@ -8,7 +8,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {connect} from 'react-redux';
 
-const InterfaceCard = ({id, index, text, listID, dispatch}) => {
+const InterfaceCard = ({id, index, text}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [cardText, setCardText] = useState(text);
 
@@ -16,6 +16,7 @@ const InterfaceCard = ({id, index, text, listID, dispatch}) => {
         setCardText(text);
     }
 
+    // !TO IMPLEMENT - Function that saves edited card on interface and with API
     const saveCard = (event) => {
         event.preventDefault();
         // dispatch(editCard(id, listID, cardText));
@@ -26,8 +27,8 @@ const InterfaceCard = ({id, index, text, listID, dispatch}) => {
         setIsEditing(false);
     }
 
+    // !TO IMPLEMENT - Function that deletes card from interface and with API
     const deleteCard = e => {
-        // console.log(listID);
         // dispatch(deleteCard(id, listID));
         console.log(`Handle delete`);
     }
@@ -47,8 +48,8 @@ const InterfaceCard = ({id, index, text, listID, dispatch}) => {
                     <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}
                          className='card-container'>
                         <Card>
-                            <EditIcon className={'edit-button'} onClick={() => setIsEditing(true)}/>
-                            <DeleteIcon className={'delete-button'} onClick={deleteCard}/>
+                            <EditIcon className={'card-edit-button'} onClick={() => setIsEditing(true)}/>
+                            <DeleteIcon className={'card-delete-button'} onClick={deleteCard}/>
                             <CardContent>
                                 <Typography>{text}</Typography>
                             </CardContent>

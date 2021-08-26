@@ -22,14 +22,14 @@
 
 .interface-text-field {
     resize: none;
-    width: 100%;
+    /*width: 100%;*/
     outline: none;
     overflow: hidden;
     border: none;
 }
 
 .text-area-container {
-    /*overflow: hidden;*/
+    margin-top: 6px;
     min-height: 85px;
     padding: 6px 8px 2px;
 }
@@ -39,10 +39,13 @@
     display: flex;
     align-items: center;
     margin-left: 8px;
-    /*width: 100%;*/
+    width: 100%;
 }
 
 .form-container {
-    width: 284px;
     margin-bottom: 8px;
+}
+
+.close-button {
+    cursor: pointer;
 }

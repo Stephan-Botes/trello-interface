@@ -1,13 +1,16 @@
 import './InterfaceHome.css';
 import {connect} from 'react-redux';
 import React, {useEffect, useState} from 'react';
-import {addBoardAction, deleteBoardAction, editBoardAction, requestBoardsAction} from '../../actions/boardActions';
-import InterfaceCard from '../Card/InterfaceCard';
 import {Link} from 'react-router-dom';
-import Thumbnail from "../Thumbnail/Thumbnail";
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
-import {Button} from "@material-ui/core";
+import Thumbnail from '../Thumbnail/Thumbnail';
+import {Button, TextField} from '@material-ui/core';
+import {
+    addBoardAction,
+    deleteBoardAction,
+    editBoardAction,
+    requestBoardsAction,
+    setActiveBoardAction
+} from '../../actions/boardActions';
 
 const mapStateToProps = (state) => {
     return {
@@ -22,12 +25,14 @@ const mapDispatchToProps = (dispatch) => {
         onRequestBoards: () => dispatch(requestBoardsAction()),
         onAddBoard: (boardName) => dispatch(addBoardAction(boardName)),
         onDeleteBoard: (boardID) => dispatch(deleteBoardAction(boardID)),
-        onEditBoard: (boardID, newBoardName) => dispatch(editBoardAction(boardID, newBoardName))
+        onEditBoard: (boardID, newBoardName) => dispatch(editBoardAction(boardID, newBoardName)),
+        onSetActiveBoard: (boardID) => dispatch(setActiveBoardAction(boardID))
     }
 }
 
 const InterfaceHome = (props) => {
     const [boardName, setBoardName] = useState('');
+    const {isPending, boards} = props;
 
     useEffect(() => {
         props.onRequestBoards();
@@ -42,7 +47,9 @@ const InterfaceHome = (props) => {
         props.onAddBoard(boardName);
     }
 
-    const {isPending, boards} = props;
+    const setActiveBoard = (boardID) => {
+        props.onSetActiveBoard(boardID);
+    }
 
     const renderBoards = () => {
         return boards.map((board, index) => {
@@ -50,27 +57,34 @@ const InterfaceHome = (props) => {
                 <>
                     <Link
                         key={index}
-                        to={`/${board.shortLink}`}
+                        to={`/${board.id}`}
                         style={{textDecoration: 'none'}}
+                        onClick={() => setActiveBoard(board.id)}
                     >
-                        <Thumbnail id={board.id} title={board.name} deleteBoard={props.onDeleteBoard} editBoard={props.onEditBoard}/>
+                        <Thumbnail
+                            id={board.id}
+                            title={board.name}
+                            deleteBoard={props.onDeleteBoard}
+                            editBoard={props.onEditBoard}
+                        />
                     </Link>
                 </>
             );
         });
-    };
+    }
 
+    // Renders a form to allow creation of new boards
     const renderCreateBoard = () => {
         return (
-            <form onSubmit={handleSubmit} style={{ textAlign: "center" }}>
+            <form className={'create-board-form'} onSubmit={handleSubmit}>
                 <h3>Create a new Board</h3>
-                <input
+                <TextField
+                    style={{color: 'green'}}
                     onChange={handleChange}
                     value={boardName}
-                    placeholder="Your boards title..."
-                    type="text"
-                />
-                <Button type='submit'>Submit</Button>
+                    placeholder='Your board title...'
+                    type='text'/>
+                <Button variant='contained' className={'create-board-submit-button'} type='submit'>Submit</Button>
             </form>
         );
     }
@@ -78,7 +92,9 @@ const InterfaceHome = (props) => {
     return (
         <>
             {isPending ?
-                <p>Loading</p> :
+                <div className={'home-container'}>
+                    <img className={'loading-icon'} src={'https://c.tenor.com/hQz0Kl373E8AAAAi/loading-waiting.gif'}/>
+                </div> :
                 <>
                     <div className={'home-container'}>
                         {renderCreateBoard()}

@@ -1,10 +1,10 @@
 import React from 'react';
 import './InterfaceList.css';
 import InterfaceCard from '../Card/InterfaceCard';
-import InterfaceButton from '../Button/InterfaceButton';
 import {Draggable, Droppable} from 'react-beautiful-dnd';
-import CreateSlot from "../CreateSlot/CreateSlot";
-import {Create} from "@material-ui/icons";
+import CreateSlot from '../CreateSlot/CreateSlot';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const InterfaceList = ({listId, index, title, cards}) => {
     return (
@@ -18,7 +18,12 @@ const InterfaceList = ({listId, index, title, cards}) => {
                     <Droppable droppableId={String(listId)}>
                         {(provided) => (
                             <div {...provided.droppableProps} ref={provided.innerRef}>
-                                <h4>{title}</h4>
+                                <div className={'list-header'}>
+                                    <h4>{title}</h4>
+                                        <EditIcon className={'list-edit-button'}/>
+                                        <DeleteIcon className={'list-delete-button'}/>
+                                </div>
+
                                 {cards.map((card, index) => (
                                     <InterfaceCard key={card.id} id={card.id} index={index} text={card.text}/>
                                 ))}
