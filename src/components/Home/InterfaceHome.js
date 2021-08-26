@@ -1,7 +1,7 @@
 import './InterfaceHome.css';
 import {connect} from 'react-redux';
 import React, {useEffect, useState} from 'react';
-import {addBoardTitleAction, requestBoardsAction} from '../../actions/boardActions';
+import {addBoardAction, deleteBoardAction, editBoardAction, requestBoardsAction} from '../../actions/boardActions';
 import InterfaceCard from '../Card/InterfaceCard';
 import {Link} from 'react-router-dom';
 import Thumbnail from "../Thumbnail/Thumbnail";
@@ -20,7 +20,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onRequestBoards: () => dispatch(requestBoardsAction()),
-        onAddBoard: (boardName) => dispatch(addBoardTitleAction(boardName))
+        onAddBoard: (boardName) => dispatch(addBoardAction(boardName)),
+        onDeleteBoard: (boardID) => dispatch(deleteBoardAction(boardID)),
+        onEditBoard: (boardID, newBoardName) => dispatch(editBoardAction(boardID, newBoardName))
     }
 }
 
@@ -40,7 +42,6 @@ const InterfaceHome = (props) => {
         props.onAddBoard(boardName);
     }
 
-
     const {isPending, boards} = props;
 
     const renderBoards = () => {
@@ -52,7 +53,7 @@ const InterfaceHome = (props) => {
                         to={`/${board.shortLink}`}
                         style={{textDecoration: 'none'}}
                     >
-                        <Thumbnail title={board.name}/>
+                        <Thumbnail id={board.id} title={board.name} deleteBoard={props.onDeleteBoard} editBoard={props.onEditBoard}/>
                     </Link>
                 </>
             );
@@ -80,10 +81,10 @@ const InterfaceHome = (props) => {
                 <p>Loading</p> :
                 <>
                     <div className={'home-container'}>
+                        {renderCreateBoard()}
                         <div className={'board-thumbnails-container'}>
                             {renderBoards()}
                         </div>
-                        {renderCreateBoard()}
                     </div>
                 </>
             }

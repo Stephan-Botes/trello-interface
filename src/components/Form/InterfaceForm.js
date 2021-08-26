@@ -57,7 +57,7 @@ const InterfaceForm = ({list, text = '', onChange, closeForm, children}) => {
                     onChange={(event) => onChange(event.target.value)}
                 />
             </Card>
-            <div className={'interface-button-add-ui'}>
+            <div className={'interface-button-container'}>
                 {children}
                 <CloseIcon onMouseDown={closeForm}/>
             </div>

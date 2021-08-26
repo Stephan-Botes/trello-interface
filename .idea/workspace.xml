@@ -4,7 +4,11 @@
     <list default="true" id="5b81b375-2d55-436f-94da-7625d762d623" name="Default Changelist" comment="Initial commit and project structure setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/boardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/boardActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/InterfaceForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/InterfaceForm.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Form/InterfaceForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/InterfaceForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home/InterfaceHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/InterfaceHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/boardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/boardReducer.js" afterDir="false" />
     </list>
@@ -109,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629903681377</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added board add logic">
+      <created>1629906688501</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1629906688501</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +143,7 @@
     <MESSAGE value="Component additions and changes" />
     <MESSAGE value="Updated InterfaceList render logic" />
     <MESSAGE value="Updated list add logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated list add logic" />
+    <MESSAGE value="Added board add logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added board add logic" />
   </component>
 </project>
