@@ -13,10 +13,3 @@ ReactDOM.render(
     </React.StrictMode>,
     document.getElementById('root')
 );
-
-/*
-TDL
-Overall styling
-Fonts       - import to index.html
-Font icons  - import to index.html
- */

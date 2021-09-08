@@ -3,35 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5b81b375-2d55-436f-94da-7625d762d623" name="Default Changelist" comment="Initial commit and project structure setup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/boardActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/boardActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/example-action.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/listActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/listActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Board/InterfaceBoard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board/InterfaceBoard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Board/InterfaceBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board/InterfaceBoard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Button/InterfaceButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Button/InterfaceButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/InterfaceCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/InterfaceCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Card/InterfaceCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Card/InterfaceCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateSlot/CreateSlot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateSlot/CreateSlot.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/InterfaceForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/InterfaceForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/InterfaceForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/InterfaceForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/InterfaceHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/InterfaceHome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home/InterfaceHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/InterfaceHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/InterfaceList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/InterfaceList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/InterfaceList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/InterfaceList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OpenForm/InterfaceOpenForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OpenForm/InterfaceOpenForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Thumbnail/Thumbnail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/boardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/boardReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/example-reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/listReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/listReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,19 +53,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -107,7 +67,10 @@
       <workItem from="1629796528415" duration="736000" />
       <workItem from="1629797348944" duration="40883000" />
       <workItem from="1629923710241" duration="33778000" />
-      <workItem from="1629998388110" duration="8706000" />
+      <workItem from="1629998388110" duration="9270000" />
+      <workItem from="1630051634098" duration="139000" />
+      <workItem from="1630241946326" duration="682000" />
+      <workItem from="1630312789372" duration="1260000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit and project structure setup">
       <created>1629366399759</created>
@@ -151,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629921530834</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added List and Card Functionality.&#10;Added Styling.&#10;Bug fixes.&#10;File cleanup.">
+      <created>1630008867570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630008867570</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +147,7 @@
     <MESSAGE value="Added board add logic" />
     <MESSAGE value="Added Board Add, Edit &amp; Delete logic" />
     <MESSAGE value="Added List and Card Functionality.&#10;Added Styling.&#10;Bug fixes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added List and Card Functionality.&#10;Added Styling.&#10;Bug fixes." />
+    <MESSAGE value="Added List and Card Functionality.&#10;Added Styling.&#10;Bug fixes.&#10;File cleanup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added List and Card Functionality.&#10;Added Styling.&#10;Bug fixes.&#10;File cleanup." />
   </component>
 </project>
